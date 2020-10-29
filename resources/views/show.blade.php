@@ -17,6 +17,12 @@
     <li>{{$book->genre}}</li>
     <li><img src="{{$book->image}}" alt="{{$book->title}}"></li>
     </ul>
+
+<form action="{{route("books.destroy", $book->id)}}" method="POST">
+    @csrf
+    @method("DELETE")
+    <input type="submit" value="cancella">
+</form>
     
 </body>
 </html>
