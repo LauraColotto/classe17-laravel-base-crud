@@ -61,6 +61,8 @@ class BookController extends Controller
         $book->genre = $data['genre'];
         $book->image = $data['image'];
         $book->save();
+
+        return redirect()->route("books.show", $book);
         
     }
 
@@ -72,7 +74,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
     }
 
     /**
